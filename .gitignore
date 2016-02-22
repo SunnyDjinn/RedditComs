@@ -65,3 +65,6 @@ target/
 # Reddit comments file
 # Add below the name of your reddit comments file so it's not uploaded on the repository
 rcomments
+
+# Reduced data
+ReducedData
