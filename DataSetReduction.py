@@ -78,7 +78,7 @@ def readAllAndExportCSV(inputFilePath, outputFilePath):
             parsedLine = parseAndReduceLine(line)
             for value in parsedLine:
                 if type(value) == int:
-                    lineToWrite += "," + str(value)
+                    lineToWrite += str(value) + ","
                 else:
                     lineToWrite += value.encode('utf-8', 'ignore') + ','
 
