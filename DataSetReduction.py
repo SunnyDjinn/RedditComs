@@ -80,13 +80,13 @@ def readAllAndExportCSV(inputFilePath, outputFilePath):
                 if type(value) == int:
                     lineToWrite += "," + str(value)
                 else:
-                    lineToWrite += value.encode('utf-8', 'ignore')
+                    lineToWrite += value.encode('utf-8', 'ignore') + ','
 
             outputFile.write(lineToWrite + '\n')
 
 
-#readAllAndExportCSV(PATH_TO_DATASET, CSV_OUTPUT_FILE) # ReducedCSV contains the whole file with reduced dimension, colon separated (easier to read with pandas)
-#exit()
+readAllAndExportCSV(PATH_TO_DATASET, CSV_OUTPUT_FILE) # ReducedCSV contains the whole file with reduced dimension, colon separated (easier to read with pandas)
+exit()
 
 rawData = getRawData(PATH_TO_DATASET)
 data = parsedAndreducedData(rawData)    # Data contains now rows of reduced data from 0 to 6, respectively author, created_utc, body, score, ups, downs, subreddit
