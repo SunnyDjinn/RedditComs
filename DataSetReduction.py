@@ -37,7 +37,7 @@ def parsedAndreducedData(fullData):
     for datapoint in fullData:
         data[i][0] = datapoint['author']
         data[i][1] = datapoint['created_utc']
-        data[i][2] = datapoint['body'].replace('\n', '')
+        data[i][2] = datapoint['body'].replace('\n', '').replace(',', '')   # Replaces carriage return and commas in the body (so no problem when export to csv)
         data[i][3] = datapoint['score']
         data[i][4] = datapoint['ups']
         data[i][5] = datapoint['downs']
