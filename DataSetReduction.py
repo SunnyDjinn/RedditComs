@@ -50,7 +50,7 @@ def parseAndReduceLine(line):
     datapoint = json.loads(line)
     data[0] = datapoint['author']
     data[1] = datapoint['created_utc']
-    data[2] = datapoint['body'].replace('\n', '')
+    data[2] = datapoint['body'].replace('\n', '').replace(',', '')   # Replaces carriage return and commas in the body (so no problem when export to csv)
     data[3] = datapoint['score']
     data[4] = datapoint['ups']
     data[5] = datapoint['downs']
